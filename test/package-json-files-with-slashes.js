@@ -32,6 +32,7 @@ t.test('package with negated files', async (t) => {
     'lib/for.js',
     'lib/one.js',
     'lib/tre.js',
+    'lib/two.js',
     'package.json',
   ])
 })
