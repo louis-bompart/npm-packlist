@@ -28,7 +28,7 @@ t.test('cannot include something that exists but is neither a file nor a directo
           callback = options
           options = undefined
         }
-        if (path === join(pkg, 'lib', 'socket')) {
+        if (path === join(pkg, 'lib', 'socket').replace(/\\/g, '/')) {
           return callback(null, {
             isFile: () => false,
             isDirectory: () => false,
@@ -45,7 +45,7 @@ t.test('cannot include something that exists but is neither a file nor a directo
     fs: {
       ...fs,
       lstatSync: (path) => {
-        if (path === join(pkg, 'device')) {
+        if (path === join(pkg, 'device').replace(/\\/g, '/')) {
           return { isFile: () => false, isDirectory: () => false }
         }
 
